@@ -3,14 +3,18 @@ rvm:
   - 1.9.3
 services:
   - redis
-env:
-  - ANALYTICS_ID=UA-33980823-1
-  - OAUTH_USER_ID=603467509357.apps.googleusercontent.com
-  - OAUTH_CLIENT_SECRET=zz7-wlKBIkfm_PE70jlZGzk7
-  - OAUTH_TOKEN=1/3U9xkLMmmrLTjR0epvVO9zmxOrrvXpWPUIVdLfeGa-M
-  - OAUTH_SECRET=zZT1qUyi5t-il01tvxP3QjzT
 before_script:
   - psql -c 'create database victorykit_test;' -U postgres
   - bundle exec rake db:migrate
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
+  - "export ANALYTICS_ID=UA-33980823-1"
+  - "export OAUTH_USER_ID=603467509357.apps.googleusercontent.com"
+  - "export OAUTH_CLIENT_SECRET=zz7-wlKBIkfm_PE70jlZGzk7"
+  - "export OAUTH_TOKEN=1/3U9xkLMmmrLTjR0epvVO9zmxOrrvXpWPUIVdLfeGa-M"
+  - "export OAUTH_SECRET=zZT1qUyi5t-il01tvxP3QjzT"
+  - "echo $ANALYTICS_ID"
+  - "echo $OAUTH_USER_ID"
+  - "echo $OAUTH_CLIENT_SECRET"
+  - "echo $OAUTH_TOKEN"
+  - "echo $OAUTH_SECRET"
