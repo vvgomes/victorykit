@@ -21,3 +21,4 @@ before_script:
 notifications:
   email:
     - vvgomess@gmail.com
+  on_success: always
