@@ -19,6 +19,6 @@ before_script:
   - "echo $OAUTH_TOKEN"
   - "echo $OAUTH_SECRET"
 notifications:
-  email:
-    - vvgomess@gmail.com
-  on_success: always
+  webhooks:
+    urls:
+      - http://monkeyfoo.herokuapp.com/
